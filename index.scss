@@ -70,8 +70,11 @@ body{
     background-color: white;
     padding: $setPadding;
     margin: 0 auto;
-    bottom:-70px;
+    top:70%;
+    transition: all;
+    transition-duration: 300ms;
     position: absolute;
+    max-width: 70%;
     @include borderRadius;
     p{
         
@@ -94,4 +97,8 @@ body{
         font-size: 1.5em;
         color:hsl(0, 0%, 17%);
     }
+}
+#map { height: calc(100vh - 300px); width: 100%; background-color: red; }
+.attribution{
+    text-align: center;
 }

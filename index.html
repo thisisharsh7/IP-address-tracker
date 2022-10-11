@@ -10,6 +10,12 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+     integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+     crossorigin=""/> 
+     <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+     integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+     crossorigin=""></script>
     <link rel="stylesheet" type="text/css" href="index.css" />
 
     <title>Frontend Mentor | IP Address Tracker</title>
@@ -20,9 +26,9 @@
         <h1>IP Address Tracker</h1>
         <form>
           <div>
-            <input placeholder="Search for any IP address or domain" />
+            <input placeholder="Search for any IP address or domain" id="iut" />
           </div>
-          <button type="submit">
+          <button type="submit" onclick="getInput(event)">
             <img src="./images/icon-arrow.svg" alt="arrow" />
           </button>
         </form>
@@ -30,35 +36,36 @@
           <div>
             <p>
               <span>IP Address</span>
-              <span>192.212.174.101</span>
+              <span id="setIp">192.212.174.101</span>
             </p>
           </div>
           <div>
             <p>
               <span>Location</span>
               <span
-                >Brooklyn, NY<br />
-                10001</span
+                id="setLocate">Brooklyn,
+                NY 10001</span
               >
             </p>
           </div>
           <div>
             <p>
               <span>Timezone</span>
-              <span>UTC-05:00</span>
+              <span id="setTime">UTC-05:00</span>
             </p>
           </div>
           <div>
             <p>
               <span>ISP</span>
-              <span>SpaceX<br />Starlink</span>
+              <span id="setIsp">SpaceX Starlink</span>
             </p>
           </div>
         </div>
       </div>
-      <div class="arrow">
+      <!-- <div class="arrow">
         <img src="./images/icon-location.svg" alt="location" />
-      </div>
+      </div> -->
+      <div id="map"></div>
       <div class="attribution">
         Challenge by
         <a
@@ -71,5 +78,6 @@
         >.
       </div>
     </main>
+    <script src="index.js"></script>
   </body>
 </html>

@@ -102,8 +102,13 @@ body {
   background-color: white;
   padding: 2em;
   margin: 0 auto;
-  bottom: -70px;
+  top: 70%;
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
   position: absolute;
+  max-width: 70%;
   border-radius: 7px 7px 7px 7px;
 }
 
@@ -137,5 +142,15 @@ body {
   font-weight: 600;
   font-size: 1.5em;
   color: #2b2b2b;
+}
+
+#map {
+  height: calc(100vh - 300px);
+  width: 100%;
+  background-color: red;
+}
+
+.attribution {
+  text-align: center;
 }
 /*# sourceMappingURL=index.css.map */
