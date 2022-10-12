@@ -10,20 +10,28 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
-     integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
-     crossorigin=""/> 
-     <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
-     integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
-     crossorigin=""></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+      integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+      crossorigin=""
+    ></script>
     <link rel="stylesheet" type="text/css" href="index.css" />
 
     <title>Frontend Mentor | IP Address Tracker</title>
   </head>
-  <body>
+  <body onload="pointerLocate()">
     <main>
       <div class="top">
         <h1>IP Address Tracker</h1>
+        <div class="errorMsg">
+          <p>Invalid Input</p>
+        </div>
         <form>
           <div>
             <input placeholder="Search for any IP address or domain" id="iut" />
@@ -42,10 +50,7 @@
           <div>
             <p>
               <span>Location</span>
-              <span
-                id="setLocate">Brooklyn,
-                NY 10001</span
-              >
+              <span id="setLocate">Brooklyn, NY 10001</span>
             </p>
           </div>
           <div>

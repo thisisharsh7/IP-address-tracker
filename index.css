@@ -10,6 +10,7 @@ body {
   margin: 0 auto;
   font-family: 'Rubik', sans-serif;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .top {
@@ -73,11 +74,20 @@ body {
   justify-items: center;
   padding: 1em 1.5em;
   cursor: pointer;
+  -webkit-transition: background-color 1s;
+  transition: background-color 1s;
+  border: none;
   border-radius: 0 7px 7px 0;
 }
 
 .top form button img {
   width: 0.7em;
+}
+
+.top form button.active {
+  background-color: #ff6464;
+  -webkit-transition: background-color 200ms;
+  transition: background-color 200ms;
 }
 
 .top h1 {
@@ -102,6 +112,8 @@ body {
   background-color: white;
   padding: 2em;
   margin: 0 auto;
+  -webkit-box-shadow: 5px 5px 36px -1px rgba(0, 0, 0, 0.56);
+          box-shadow: 5px 5px 36px -1px rgba(0, 0, 0, 0.56);
   top: 70%;
   -webkit-transition: all;
   transition: all;
@@ -109,6 +121,7 @@ body {
           transition-duration: 300ms;
   position: absolute;
   max-width: 70%;
+  z-index: 10;
   border-radius: 7px 7px 7px 7px;
 }
 
@@ -147,10 +160,39 @@ body {
 #map {
   height: calc(100vh - 300px);
   width: 100%;
-  background-color: red;
+  z-index: 1;
 }
 
 .attribution {
   text-align: center;
+}
+
+.errorMsg {
+  background-color: white;
+  padding: 1em 2em;
+  position: absolute;
+  border-radius: 0.2rem;
+  top: 20;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  right: 0;
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  color: red;
+  -webkit-box-shadow: 5px 5px 20px -1px rgba(231, 38, 38, 0.56);
+          box-shadow: 5px 5px 20px -1px rgba(231, 38, 38, 0.56);
+  opacity: 0;
+}
+
+.errorMsg.active {
+  -webkit-transform: translateX(-50px);
+          transform: translateX(-50px);
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 800ms;
+          transition-duration: 800ms;
+  opacity: 1;
 }
 /*# sourceMappingURL=index.css.map */

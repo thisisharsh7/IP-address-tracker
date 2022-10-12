@@ -12,6 +12,7 @@ body{
    margin: 0 auto;
    font-family: 'Rubik', sans-serif;
    min-height: 100vh;
+   overflow: hidden;
 }
 @mixin centerItems($alignment :center){
     display: flex;
@@ -54,11 +55,19 @@ body{
             @include centerItems;
             padding: 1em 1.5em;
             cursor: pointer;
+            transition: background-color 1s;
+            border: none;
             @include borderRadius($Tleft:0 , $Bleft:0);
             img{
                 width: 0.7em;
             }
+            
         }
+        button.active{
+                background-color: rgb(255, 100, 100);
+                
+            transition: background-color 200ms;
+            }
     }
     h1{color:white;
         font-weight: normal;
@@ -70,11 +79,13 @@ body{
     background-color: white;
     padding: $setPadding;
     margin: 0 auto;
+    box-shadow: 5px 5px 36px -1px rgba(0,0,0,0.56);
     top:70%;
     transition: all;
     transition-duration: 300ms;
     position: absolute;
     max-width: 70%;
+   z-index: 10;
     @include borderRadius;
     p{
         
@@ -98,7 +109,27 @@ body{
         color:hsl(0, 0%, 17%);
     }
 }
-#map { height: calc(100vh - 300px); width: 100%; background-color: red; }
+#map { height: calc(100vh - 300px); width: 100%;z-index: 1;}
 .attribution{
     text-align: center;
+}
+.errorMsg{
+    background-color: white;
+    padding: 1em 2em;
+    position: absolute;
+    border-radius: 0.2rem;
+    top:20;
+    transform: translateX(0px);
+    right:0;
+    transition: all;
+    transition-duration: 500ms;
+    color:red;
+    box-shadow: 5px 5px 20px -1px rgba(231, 38, 38, 0.56);
+    opacity: 0;
+}
+.errorMsg.active{
+    transform: translateX(-50px);
+    transition: all;
+    transition-duration: 800ms;
+    opacity: 1;
 }
